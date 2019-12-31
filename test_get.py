@@ -1,5 +1,9 @@
 from consumir_api import *
 
+# Mensajes de error...
+msg_error_val = "ERROR: Se debe ingresar un número entero válido."
+msg_error_zero = "ERROR: Se debe ingresar un número entero mayor a cero."
+
 
 # Valor input : 1353647483958953583 (Entero 19 dígitos)
 # Resultado esperado : Devuelve OK secuencia correspondiente...
@@ -28,35 +32,35 @@ def test_method_3():
 # Resultado esperado : Devolver error de input inválido... 
 def test_method_4():
 	valor = 22.15234
-	assert obtenerSecuenciaCollatz(valor) == "ERROR: Se debe ingresar un número entero válido."
+	assert obtenerSecuenciaCollatz(valor) == msg_error_val
 
 
 # Valor input : 0
 # Resultado esperado : Devolver error de input inválido... 
 def test_method_5():
 	valor = 0
-	assert obtenerSecuenciaCollatz(valor) == "ERROR: Se debe ingresar un número entero válido."
+	assert obtenerSecuenciaCollatz(valor) == msg_error_val
 
 
 # Valor input : -21 (Valor negativo)
 # Resultado esperado : Devolver error de input inválido.. 
 def test_method_6():
 	valor = -21
-	assert obtenerSecuenciaCollatz(valor) == "ERROR: Se debe ingresar un número entero mayor a cero."
+	assert obtenerSecuenciaCollatz(valor) == msg_error_zero
 
 
 # Valor input : [Cadena de texto, una palabra]
 # Resultado esperado : Devolver error de input inválido... 
 def test_method_7():
 	valor = "Probando"
-	assert obtenerSecuenciaCollatz(valor) == "ERROR: Se debe ingresar un número entero válido."
+	assert obtenerSecuenciaCollatz(valor) == msg_error_val
 
 
 # Valor input : [Cadena de texto, varias palabras, caracteres especiales, espacios, etc]
 # Resultado esperado : Devolver error de input inválido... 
 def test_method_8():
 	valor = "     123      Hola mundo, #@$/:.-url_url_url/4-hola-mundo/56/7(8(xD"
-	assert obtenerSecuenciaCollatz(valor) == "ERROR: Se debe ingresar un número entero válido."
+	assert obtenerSecuenciaCollatz(valor) == msg_error_val
 
 
 
